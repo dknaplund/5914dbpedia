@@ -4,7 +4,9 @@
 
 ## Okay... So what is SPARQL?
 
-(Hao and Brian) This is where we talk about SPARQL and how to use that, with sample queries set up like this (I (Dylan) wrote this one feel free to use it
+(Hao and Brian) This is where we talk about SPARQL and how to use that, with sample queries set up like this (I (Dylan) wrote this one feel free to use it)
+
+This is a query that finds all songs by Green Day paired with the albums they are found on.
 ```markdown
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -17,9 +19,9 @@ PREFIX dbpedia2: <http://dbpedia.org/property/>
 PREFIX dbpedia: <http://dbpedia.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX albums: <http://dbpedia.org/resource/Category:Green_Day_albums>
-SELECT ?term ?title WHERE {
-    ?term ?property albums: .
-    ?term dbpedia2:title ?title .
+SELECT ?album ?title WHERE {
+    ?album ?property albums: .
+    ?album dbpedia2:title ?title .
     ?title dbo:musicalArtist :Green_Day
 } ORDER BY ?term
 ```
