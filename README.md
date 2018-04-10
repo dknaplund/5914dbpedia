@@ -1,3 +1,26 @@
+## What is DBpedia?
+
+(Sean) This is where we talk about what DBpedia is woo
+
+## Okay... So what is SPARQL?
+
+(Hao and Brian) This is where we talk about SPARQL and how to use that, with sample queries set up like this (I (Dylan) wrote this one feel free to use it
+```markdown
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+PREFIX albums: <http://dbpedia.org/resource/Category:Green_Day_albums>
+SELECT ?term ?title WHERE {
+    ?term ?property albums: .
+    ?term dbpedia2:title ?title .
+    ?title dbo:musicalArtist :Green_Day
+} ORDER BY ?term
+```
+
+## Okay then... How do I put it into my project?
+
+(Dylan and Peiyuan) This is where we talk about how to integrate DBpedia into a project. I found the thing on a Python package to make SPARQL queries with, I'll add it later.
+
+# Kept for reference for styles and techniques for if y'all are new to this like me
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/dknaplund/5914dbpedia/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
