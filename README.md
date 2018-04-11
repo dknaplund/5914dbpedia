@@ -8,16 +8,8 @@
 
 This is a query that finds all songs by Green Day paired with the albums they are found on.
 ```markdown
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX : <http://dbpedia.org/resource/>
 PREFIX dbpedia2: <http://dbpedia.org/property/>
-PREFIX dbpedia: <http://dbpedia.org/>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX albums: <http://dbpedia.org/resource/Category:Green_Day_albums>
 SELECT ?album ?title WHERE {
     ?album ?property albums: .
@@ -28,7 +20,47 @@ SELECT ?album ?title WHERE {
 
 ## Okay then... How do I put it into my project?
 
-(Dylan and Peiyuan) This is where we talk about how to integrate DBpedia into a project. I found the thing on a Python package to make SPARQL queries with, I'll add it later.
+"SPARQLWrapper" (information can be found [here](https://rdflib.github.io/sparqlwrapper/) ) is one convenient resource for integrating SPARQL queries into your project. Simply install the SPARQLWrapper package with 
+```markdown
+pip install SPARQLWrapper
+```
+and you are on your way! This package allows you to make SPARQL queries (and thus query DBpedia) from Python without any further hassle! An example is shown below, using an example query from earlier:
+```markdown
+from SPARQLWrapper import SPARQLWrapper, JSON
+
+sparql = SPARQLWrapper("http://dbpedia.org/sparql")
+sparql.setQuery("""
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+PREFIX : <http://dbpedia.org/resource/>
+PREFIX albums: <http://dbpedia.org/resource/Category:Green_Day_albums>
+SELECT ?album ?title WHERE {
+    ?album ?property albums: .
+    ?album dbpedia2:title ?title .
+    ?title dbo:musicalArtist :Green_Day
+} ORDER BY ?term
+""")
+sparql.setReturnFormat(JSON)
+results = sparql.query().convert()
+
+for result in results["results"]["bindings"]:
+    print("%s %s" % (result["album"]["value"], result["title"]["value"]))
+```
+If you are copying this example, you will have to change the "album" or "title" to whatever your variables are in your query.
+When code this is run, you will get an output with each line containing the album and title of the result, like
+```markdown
+http://dbpedia.org/resource/Warning_(Green_Day_album) http://dbpedia.org/resource/Warning_(Green_Day_song)
+http://dbpedia.org/resource/21st_Century_Breakdown http://dbpedia.org/resource/East_Jesus_Nowhere
+http://dbpedia.org/resource/Awesome_as_Fuck http://dbpedia.org/resource/East_Jesus_Nowhere
+...
+```
+These results are returned as links, which are resources in dbpedia, referring to the objects / properties.
+
+This is just one way to integrate these queries into your project, but hopefully it's a good foothold to get started!
+
+## Thank you for visiting our tutorial!
+
+
+
 
 # Kept for reference for styles and techniques for if y'all are new to this like me
 
