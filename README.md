@@ -69,10 +69,20 @@ These results are returned as links, which are resources in dbpedia, referring t
 
 This is just one way to integrate these queries into your project, but hopefully it's a good foothold to get started!
 
+## How do we improve our own knowledge and horizon using DBpedia?
+
+Use RelFIinder to discover internal relationship between objects. The RelFinder is based on the open source framework Adobe Flex, easy-to-use and works with any RDF dataset that provides standardized SPARQL access.
+
+Use it for knowledge, for research paper and for your own interest.
+
+Options
+
 ## Thank you for visiting our tutorial!
 
 ## Questions for you guys (Peiyuan)
+
 Why DBPedia is a revoluntionized technology?
+
 How does DBPedia reflect decentralization?
 
 ## Reference
