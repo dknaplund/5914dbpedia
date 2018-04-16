@@ -141,7 +141,7 @@ https://raw.githubusercontent.com/VisualDataWeb/RelFinder/master/bin/config/Conf
 
 Note: Make sure that you use the same folder structure and file names (incl. capital and small letters) and that you set the access rights properly. If you start your server now and enter the URL of the RelFinder.swf in your Web browser (e.g. http://localhost/relfinder/RelFinder.swf), it should access the DBpedia dataset by default. You can then edit the Config.xml so that it works with your dataset(s).
 
-Then, it will work, and go discover the relevance between everything in the universe.
+Then, it will work, and go to discover the relevance between everything in the universe.
 
 ## Thank you for visiting our tutorial!
 
