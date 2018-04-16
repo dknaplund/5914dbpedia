@@ -73,20 +73,89 @@ This is just one way to integrate these queries into your project, but hopefully
 
 Use RelFIinder to discover internal relationship between objects. The RelFinder is based on the open source framework Adobe Flex, easy-to-use and works with any RDF dataset that provides standardized SPARQL access.
 
-Use it for knowledge, for research paper and for your own interest.
+Use it for knowledge, for research paper, for projects, and for your own interest.
 
-Options
+For example, if we want to know the relationship between Valadmir Putin and Donald Trump, we can directly pu 
+
+### Configurations for datasets you want to use and environment of the frame work
+
+Options: 
+
+1. use simple (non-code) API
+
+2. edit xml (configuration) files
+
+```markdown
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+<proxy>
+<url>http://www.visualdataweb.org/relfinder/proxy.php</url>
+</proxy>
+<endpoints>
+<endpoint>
+<name>DBpedia</name>
+<abbreviation>dbp</abbreviation>
+<description>Linked Data version of Wikipedia.</description>
+<endpointURI>http://dbpedia.org</endpointURI>
+<dontAppendSPARQL>true</dontAppendSPARQL>
+<defaultGraphURI>http://dbpedia.org</defaultGraphURI>
+<isVirtuoso>true</isVirtuoso>
+<useProxy>false</useProxy>
+<method>POST</method>
+<autocompleteURIs>
+<autocompleteURI>http://www.w3.org/2000/01/rdf-schema#label</autocompleteURI>
+...
+</autocompleteURIs>
+<autocompleteLanguage>en</autocompleteLanguage>
+<ignoredProperties>
+<ignoredProperty>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</ignoredProperty>
+...
+</ignoredProperties>
+<abstractURIs>
+<abstractURI>http://dbpedia.org/property/abstract</abstractURI>
+...
+</abstractURIs>
+<imageURIs>
+<imageURI>http://dbpedia.org/ontology/thumbnail</imageURI>
+...
+</imageURIs>
+<linkURIs>
+<linkURI>http://purl.org/ontology/mo/wikipedia</linkURI>
+...
+</linkURIs>
+<maxRelationLength>2</maxRelationLength>
+</endpoint>
+<endpoint>
+...
+</endpoint>
+</endpoints>
+```
+### Integrate into projects and host the environment locally
+
+Downloads all those files from this open source
+
+https://github.com/VisualDataWeb/RelFinder/tree/master/bin
+
+Be sure to edit this following configuration file
+https://raw.githubusercontent.com/VisualDataWeb/RelFinder/master/bin/config/Config.xml
+
+Note: Make sure that you use the same folder structure and file names (incl. capital and small letters) and that you set the access rights properly. If you start your server now and enter the URL of the RelFinder.swf in your Web browser (e.g. http://localhost/relfinder/RelFinder.swf), it should access the DBpedia dataset by default. You can then edit the Config.xml so that it works with your dataset(s).
+
+Then, it will work, and go discover the relevance between everything in the universe.
 
 ## Thank you for visiting our tutorial!
 
-## Questions for you guys (Peiyuan)
+## Questions for you guys 
 
 Why DBPedia is a revoluntionized technology?
 
 How does DBPedia reflect decentralization?
 
+
 ## Reference
 https://web.archive.org/web/20100202094110/http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/research/publications/Bizer-etal-DBpedia-CrystallizationPoint-JWS-Preprint.pdf
 
-# Kept for reference for styles and techniques for if y'all are new to this like me
+http://www.visualdataweb.org/integrating.php
+
+## Kept for reference for styles and techniques for if y'all are new to this like me
 
