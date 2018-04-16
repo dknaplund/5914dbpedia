@@ -66,6 +66,12 @@ This is just one way to integrate these queries into your project, but hopefully
 
 ## Thank you for visiting our tutorial!
 
+## Questions for you guys
+Why DBPedia is a revoluntionized technology?
+How does DBPedia reflect decentralization?
+
+## Reference
+https://web.archive.org/web/20100202094110/http://www.wiwiss.fu-berlin.de/en/institute/pwo/bizer/research/publications/Bizer-etal-DBpedia-CrystallizationPoint-JWS-Preprint.pdf
 
 # Kept for reference for styles and techniques for if y'all are new to this like me
 
