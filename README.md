@@ -2,6 +2,9 @@
 
 (Sean) This is where we talk about what DBpedia is woo
 
+## DBpe
+(Peiyuan) 
+
 ## Okay... So what is SPARQL?
 
 (Hao and Brian) This is where we talk about SPARQL and how to use that, with sample queries set up like this (I (Dylan) wrote this one feel free to use it)
