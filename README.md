@@ -36,7 +36,7 @@ SELECT ?album ?title WHERE {
 ```markdown
 pip install SPARQLWrapper
 ```
-and you are on your way! This package allows you to make SPARQL queries (and thus query DBpedia) from Python without any further hassle! An example is shown below, using an example query from earlier:
+and you are on your way! This package allows you to make SPARQL queries (and thus query DBpedia) from Python without any further hassle! An example is shown below, using a query from earlier in the tutorial:
 ```markdown
 from SPARQLWrapper import SPARQLWrapper, JSON
 
@@ -57,8 +57,8 @@ results = sparql.query().convert()
 for result in results["results"]["bindings"]:
     print("%s %s" % (result["album"]["value"], result["title"]["value"]))
 ```
-If you are copying this example, you will have to change the "album" or "title" to whatever your variables are in your query.
-When code this is run, you will get an output with each line containing the album and title of the result, like
+If you are copying this example, you will have to change the "album" or "title" to whatever your variables are in your SPARQL query.
+When this code is run, you will get an output with each line containing the album and title of the result, like
 ```markdown
 http://dbpedia.org/resource/Warning_(Green_Day_album) http://dbpedia.org/resource/Warning_(Green_Day_song)
 http://dbpedia.org/resource/21st_Century_Breakdown http://dbpedia.org/resource/East_Jesus_Nowhere
