@@ -9,7 +9,7 @@ It is basically extracting and summarizing information and data from wikipedia d
 
 ## DBpedia History?
 
-(Sean) This is where we talk about what DBpedia is woo
+Is this section still necessary?
 
 
 ## Okay... So what is SPARQL?
@@ -47,7 +47,7 @@ LIMIT 100
 ```
 This will return all results `x` that have `Rock_music` as the value a property labeled `genre`.
 
-This is a query that finds all songs by Green Day paired with the albums they are found on.
+As a full example, this is a query that finds all songs by Green Day paired with the albums they are found on.
 ```markdown
 PREFIX : <http://dbpedia.org/resource/>
 PREFIX dbpedia2: <http://dbpedia.org/property/>
@@ -187,6 +187,3 @@ https://web.archive.org/web/20100202094110/http://www.wiwiss.fu-berlin.de/en/ins
 http://www.visualdataweb.org/integrating.php
 
 ## Thank you for visiting our tutorial!
-
-## Kept for reference for styles and techniques for if y'all are new to this like me
-
