@@ -14,7 +14,38 @@ It is basically extracting and summarizing information and data from wikipedia d
 
 ## Okay... So what is SPARQL?
 
-(Hao and Brian) This is where we talk about SPARQL and how to use that, with sample queries set up like this (I (Dylan) wrote this one feel free to use it)
+SPARQL is a query language for data stored in the Resource Description Framework (RDF) format. RDF is a labeled and directed graph format designed specifically for representing data on the web. It can be used to encode information about almost anything, and more importantly, it allows for loose integration between differing sources of information. It uses Universal Resource Identifiers (URIs) to name not only the endpoints of a link in the graph but also the link itself. This grouping of information, usually called a RDF _triple_, forms the basis for how information is stored in RDF and queried using SPARQL.
+
+The SPARQL schema can be found [here](https://www.w3.org/TR/rdf-sparql-query/#basicpatterns). You may also find the Virtuoso [online SPARQL editor](http://dbpedia.org/sparql) useful for playing around with SPARQL syntax and the [faceted browser](http://dbpedia.org/fct/facet.vsp) useful for exploring the database.
+
+The first step of building a SPARQL query is to define one or more _prefixes_. This is done using the `PREFIX` keyword. Prefixes are essentially namespaces; if you have some experience programming, you can think of a `PREFIX` statement as being more or less equivalent to an `import` or `include` statement common to many programming languages. It tells the SPARQL processor where to find the names of resource in your query. The following prefixes are often useful:
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>  % concepts/categories
+PREFIX dbr: <http://dbpedia.org/resource/>  % specific resource names
+PREFIX dbp: <http://dbpedia.org/property/>  % properties/descriptors of objects
+```
+Now let's start with something really simple:
+```
+SELECT ?x
+WHERE {
+  ?x ?v 42 .
+}
+LIMIT 100
+```
+A `?` in SPARQL denotes a _variable_, i.e. something that we intend to fill with data. In this case, we `SELECT` `x` as the variable we want populated in our results, and we ask the processor to match all results satisfying the triple `?x ?v 42`, which could be pretty much anything involving 42 (and we know anything involving 42 must be pretty important!).
+
+Let's modify our query a bit to get more focused results:
+
+```
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+SELECT ?x
+WHERE {
+  ?x dbo:genre dbr:Rock_music .
+}
+LIMIT 100
+```
+This will return all results `x` that have `Rock_music` as the value a property labeled `genre`.
 
 This is a query that finds all songs by Green Day paired with the albums they are found on.
 ```markdown
