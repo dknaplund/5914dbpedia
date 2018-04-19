@@ -56,7 +56,7 @@ SELECT ?album ?title WHERE {
     ?album ?property albums: .
     ?album dbpedia2:title ?title .
     ?title dbo:musicalArtist :Green_Day
-} ORDER BY ?term
+} ORDER BY ?album
 ```
 Long words short, a SPARQL query consists of five parts, in order:
 1. Prefix declarations: for abbreviating URIs
@@ -102,7 +102,7 @@ SELECT ?album ?title WHERE {
     ?album ?property albums: .
     ?album dbpedia2:title ?title .
     ?title dbo:musicalArtist :Green_Day
-} ORDER BY ?term
+} ORDER BY ?album
 """)
 sparql.setReturnFormat(JSON)
 results = sparql.query().convert()
