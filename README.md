@@ -7,11 +7,6 @@ DBpedia data is served as Linked Data, which is revolutionizing the way applicat
 
 It is basically extracting and summarizing information and data from wikipedia documents. And it break all those factual information into N-tuple dumps, where everyone is related to each other somehow? In such cases, people can search elements and information from different wikipedia passages and search for something they are not sure as all related information is collected together with internal links.
 
-## DBpedia History?
-
-Is this section still necessary?
-
-
 ## Okay... So what is SPARQL?
 
 SPARQL is a query language for data stored in the Resource Description Framework (RDF) format. RDF is a labeled and directed graph format designed specifically for representing data on the web. It can be used to encode information about almost anything, and more importantly, it allows for loose integration between differing sources of information. It uses Universal Resource Identifiers (URIs) to name not only the endpoints of a link in the graph but also the link itself. This grouping of information, usually called a RDF _triple_, forms the basis for how information is stored in RDF and queried using SPARQL.
