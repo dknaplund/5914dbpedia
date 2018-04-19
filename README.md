@@ -58,7 +58,29 @@ SELECT ?album ?title WHERE {
     ?title dbo:musicalArtist :Green_Day
 } ORDER BY ?term
 ```
+Long words short, a SPARQL query consists of five parts, in order:
+1. Prefix declarations: for abbreviating URIs
+2. Dataset definition: states what RDF graph(s) are being queried
+3. Result clause: identifies what information to return from the query
+4. Query pattern: specifies what to query for in the underlying dataset
+5. Modifiers: slices orders and otherwise rearranges query results
 
+Structurally, it looks like:
+```markdown
+%1. prefix declarations
+PREFIX foo: <http://example.com/resources/>
+...
+%2. dataset definition
+FROM ...
+%3. result clause
+SELECT ...
+%4. query pattern
+WHERE {
+    ...
+}
+%5. modifiers
+ORDER BY ...
+```
 
 
 ## Okay then... How do I put it into my project?
