@@ -1,4 +1,5 @@
-
+## Please Go to this link for the website version online
+file:///Users/peiyuantang/Website/Xiangzhoujushi.github.io/app.html
 ## DBpedia Introduction
 
 DBpedia is a crowd-sourced community effort to extract structured content from the information created in various Wikimedia projects. This structured information resembles an open knowledge graph (OKG) which is available for everyone on the Web. A knowledge graph is a special kind of database which stores knowledge in a machine-readable form and provides a means for information to be collected, organised, shared, searched and utilised. Google uses a similar approach to create those knowledge cards during search. We hope that this work will make it easier for the huge amount of information in Wikimedia projects to be used in some new interesting ways. 
@@ -196,6 +197,8 @@ Then, it will work, and go to discover the relevance between everything in the u
 Why DBPedia is a revoluntionized technology?
 
 How does DBPedia reflect decentralization?
+
+
 
 
 ## Reference
